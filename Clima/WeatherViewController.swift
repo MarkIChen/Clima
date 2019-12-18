@@ -62,7 +62,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
     func updateWeatherData(json : JSON){
         
         if let tempResult = json["main"]["temp"].double{  //safer
-        
+            print(tempResult)
             weatherDataModel.temperature = Int( tempResult - 273.15) //forcing unwrapp is very dangerous
             weatherDataModel.city = json["name"].stringValue
             weatherDataModel.condition = json["weather"][0]["id"].intValue
